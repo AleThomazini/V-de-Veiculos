@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <title>V de Veiculos</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/compiler/style.css">
+    <link rel="stylesheet" href="estilo.css">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!--Cabeçalho-->
+    <header style="position: fixed; z-index: 100; width: 100%;">
+        <nav class="navbar navbar-expand-lg navbar-dark p-2" style="background-color: #4d4d4d">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-start" id="navbarSite">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Comprar</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Vender</a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Em Contrustroção</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Notícias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Sobre nós</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Login
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right p-3" aria-labelledby="dropdownMenuButton">
+                            <form role="form" class="form FormLogin">
+                                <div class="form-group mb-2">
+                                    <input type="text" class="form-control form-control-sm" placeholder="Email"
+                                        required="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-sm" placeholder="Senha"
+                                        required="">
+                                </div>
+                                <div class="form-group text-center mb-2">
+                                    <small>
+                                        <a href="#" data-toggle="modal" data-target="#modalSenha">Esqueci minha Senha
+                                        </a>
+                                    </small>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-secondary btn-block">ENTRAR</button>
+                                </div>
+                                <div class="form-group text-center">
+                                    <small>
+                                        <a href="#" data-toggle="modal" data-target="#modalCadastro">Cadastrar</a>
+                                    </small>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!--Conteúdo-->
+    <div class="conteiner mb-5 ml-5 mr-5" style="padding-top: 100px">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-weight-bold">Nome Do Modelo</h3>
+                        <h4>Breve Descrição</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/audi.png" alt="" class="imgDetalhe w-100">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="txtPreco">PREÇO $$$$$$$$$$$$$$$</h4>
+                    </div>
+                    <div class="card-body">
+                        <a href="#" class="btn btn-primary"> Comprar </a>
+                    </div>
+                </div>
+                <div class="card mt-2 h-100">
+                    <div class="card-header">
+                        <h4>Descrição</h4>
+                    </div>
+                    <div class="card-body">
+                        ................................................................................................................................................................................................................................................................................................................................................................................................................................................
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="js/clientes.js" type="text/javascript"></script>
+    <script src="js/init.js" type="text/javascript"></script>
+    <script src="js/materialize.js"></script>
+
+</body>
+
+</html>

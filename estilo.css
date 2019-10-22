@@ -1,0 +1,82 @@
+body {
+    /* font-size: 0.75em; */
+    background-color: #1a1a1a;
+}
+
+.FormLogin {
+    min-width: 350px;
+    margin: -10px;
+}
+
+.FormLogin * {
+    margin:  0;
+}
+
+#dropdownMenuButton + div{
+    margin: 7px -9px;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.filter .card-header { 
+    border-bottom: 0;
+}
+
+.filter .card-group-item {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.filter .card-group-item:last-child {
+    border-bottom: 0;
+}
+
+.list-categ li {
+    margin-bottom: 5px;
+}
+
+.list-categ li:first-child {
+    margin-bottom: 0;
+}
+
+.form-check {
+    padding-left: 1.25rem;
+}
+
+.fa-chevron-down {
+    float: right;
+}
+
+.img-produto {
+    width: 375px;
+    height: 200px;
+}
+
+.card-group-item a {
+    color :#0095da;
+}
+
+.nav-item a {
+    color :#0095da !important;
+}
+
+header {
+    border-top: 3px solid #0095da;
+}
+
+.carousel-inner {
+    height: 625px;
+}
+
+.card-group-item > h5 > a {
+    text-decoration: none;
+}
+
+.card-group-item > h5 > a:hover {
+    color: #006999;
+}
+
+.imgDetalhe {
+    
+}
