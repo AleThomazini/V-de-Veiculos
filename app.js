@@ -45,9 +45,9 @@ rota.get('/veiculos/:id?', (requisicao, resposta) => {
 	execSQL('SELECT * from Veiculo' + filtro, resposta);
 })
 
-rota.get('/imagens/:idVeiculo?', (requisicao, resposta) => {
+rota.get('/imagens/:id?', (requisicao, resposta) => {
 	let filtro = '';
 	if (requisicao.params.id) 
-		filtro = ' WHERE ID=' + parseInt(requisicao.params.id);
+		filtro = ' WHERE IdVeiculo=' + parseInt(requisicao.params.id);
 	execSQL('SELECT * from Imagens' + filtro, resposta);
 })

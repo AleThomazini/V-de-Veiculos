@@ -1,24 +1,27 @@
 /////////////////////////////////////
 
-$(document).ready(function(){    
-    $.get("http://localhost:3000/Imagens/1",function(data){
-        $("#img-Veiculo, .txtPreco, .fSlide").attr({src: "img/" + `${data[0].imagem}`});
-    });
+var imagens
 
-    $.get("http://localhost:3000/Imagens/s",function(data){
-        $(".sSlide").attr({src: "img/" + `${data[2].imagem}`});
-    });
+function listarVeiculosImgs(id) {
+    debugger
+    $("#img-Veiculo" + id).attr({src: "img/" + `${imagens[id].urlImagem}`})
+    debugger    
+}
 
-    $.get("http://localhost:3000/Imagens/1",function(data){
-        $(".tSlide").attr({src: "img/" + `${data[3].imagem}`});
+$(document).ready(function(){
+    // $.get("http://localhost:3000/Imagens/", function (imgs) {
+    //     $("#img-Veiculo1, .txtPreco, .fSlide").attr({src: "img/" + `${data[0].urlImagem}`}); 
+    //     $("#img-Veiculo2, .sSlide").attr({src: "img/" + `${data[1].urlImagem}`});
+    //     $(".tSlide").attr({src: "img/" + `${data[2].urlImagem}`});
+    // });
+    debugger
+    $.get("http://localhost:3000/imagens/", function (imgs) {
+        debugger
     });
-    
-
+    for (let index = 1; index <= 2; index++) {
+        listarVeiculosImgs(index);
+    }
 })
-
-
-
-
 
 listarClientes = function(tbody) {
 
