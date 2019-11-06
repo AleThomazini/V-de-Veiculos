@@ -33,7 +33,7 @@ function execSQL(sql, resposta) {
 	global.conexao.request()
 				  .query(sql)
 				  .then(resultado => resposta.json(resultado.recordset))
-          //.then(resultado => console.log(resultado.recordset))
+          		  //.then(resultado => console.log(resultado.recordset))
 				  .catch(erro => resposta.json(erro));
 }
 

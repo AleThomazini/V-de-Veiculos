@@ -2,25 +2,25 @@
 
 var imagens
 
-function listarVeiculosImgs(id) {
-    debugger
-    $("#img-Veiculo" + id).attr({src: "img/" + `${imagens[id].urlImagem}`})
-    debugger    
-}
+// function listarVeiculosImgs(id) {
+//     $("#img-Veiculo" + id).attr({src: "img/" + `${imagens[id].urlImagem}`})
+//     debugger
+// }
 
 $(document).ready(function(){
-    // $.get("http://localhost:3000/Imagens/", function (imgs) {
-    //     $("#img-Veiculo1, .txtPreco, .fSlide").attr({src: "img/" + `${data[0].urlImagem}`}); 
-    //     $("#img-Veiculo2, .sSlide").attr({src: "img/" + `${data[1].urlImagem}`});
-    //     $(".tSlide").attr({src: "img/" + `${data[2].urlImagem}`});
-    // });
-    debugger
-    $.get("http://localhost:3000/imagens/", function (imgs) {
-        debugger
+    $.get("http://localhost:3000/Imagens/", function (data) {
+        $("#img-Veiculo1, .txtPreco, .fSlide").attr({src: "img/" + `${data[0].urlImagem}`}); 
+        $("#img-Veiculo2, .sSlide").attr({src: "img/" + `${data[1].urlImagem}`});
+        $(".tSlide").attr({src: "img/" + `${data[2].urlImagem}`});
     });
-    for (let index = 1; index <= 2; index++) {
-        listarVeiculosImgs(index);
-    }
+    
+    // $.get("http://localhost:3000/imagens/", function (imgs) {
+    //     debugger
+    // });
+    // for (let index = 1; index <= 2; index++) {
+    //     debugger
+    //     listarVeiculosImgs(index);
+    // }
 })
 
 listarClientes = function(tbody) {
