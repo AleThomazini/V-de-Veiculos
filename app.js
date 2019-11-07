@@ -33,7 +33,6 @@ function execSQL(sql, resposta) {
 	global.conexao.request()
 				  .query(sql)
 				  .then(resultado => resposta.json(resultado.recordset))
-          		  //.then(resultado => console.log(resultado.recordset))
 				  .catch(erro => resposta.json(erro));
 }
 
@@ -50,4 +49,11 @@ rota.get('/imagens/:id?', (requisicao, resposta) => {
 	if (requisicao.params.id) 
 		filtro = ' WHERE IdVeiculo=' + parseInt(requisicao.params.id);
 	execSQL('SELECT * from Imagens' + filtro, resposta);
+})
+
+rota.get('/usuario/:id?', (requisao, resposta) => {
+	let filtro = '';
+	if (requisao.params.id)
+		filtro = ' WHERE idUsuario=' + parseInt(requisao.params.id);
+	execSQL('SELECT + from Usuario' + filtro, resposta);
 })
