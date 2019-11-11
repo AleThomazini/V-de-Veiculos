@@ -9,9 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.19.0",
     "bootstrap": "^4.0.0-beta.2",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
     "jquery": "^3.4.0",
     "mssql": "^4.3.0",
     "popper.js": "^1.14.4",
