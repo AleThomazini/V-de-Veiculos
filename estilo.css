@@ -16,6 +16,16 @@ body {
     margin: 7px -9px;
 }
 
+#navbar-icon{
+    height: 50px;
+    width: 50px;
+    margin: 50px -100px;
+}
+
+#shoppingCartMenuButton + div {
+    margin: 7px -15px;
+}
+
 button:focus {
     outline: 0;
 }
@@ -77,6 +87,3 @@ header {
     color: #006999;
 }
 
-.imgDetalhe {
-    
-}
