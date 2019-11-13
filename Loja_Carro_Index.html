@@ -11,8 +11,11 @@
     <link rel="stylesheet" href="node_modules/bootstrap/compiler/style.css">
     <link rel="stylesheet" href="estilo.css">
 
-    <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0"
+    <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"
+        integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0"
         crossorigin="anonymous"></script>
+
+    
 </head>
 
 <body>
@@ -34,7 +37,8 @@
                         <a href="#" class="nav-link">Comprar</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vender</a>
+                        <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Vender</a>
                         <div class="dropdown-menu">
                             <a href="#" class="dropdown-item">Em Contrustroção</a>
                         </div>
@@ -52,17 +56,19 @@
 
                 <ul class="navbar-nav ml-auto">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Login
                         </button>
                         <div class="dropdown-menu dropdown-menu-right p-3" aria-labelledby="dropdownMenuButton">
                             <form role="form" class="form FormLogin">
                                 <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-sm" placeholder="Email" required="">
+                                    <input id="email" type="text" class="form-control form-control-sm" placeholder="Email"
+                                        required="">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-sm" placeholder="Senha" required="">
+                                    <input id="password" type="password" class="form-control form-control-sm" placeholder="Senha"
+                                        required="">
                                 </div>
                                 <div class="form-group text-center mb-2">
                                     <small>
@@ -71,7 +77,7 @@
                                     </small>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-secondary btn-block">ENTRAR</button>
+                                    <button id="submit" type="submit" class="btn btn-secondary btn-block">ENTRAR</button>
                                 </div>
                                 <div class="form-group text-center">
                                     <small>
@@ -117,7 +123,8 @@
                 <div class="card filter">
                     <article class="card-group-item">
                         <h5 class="card-header" role="tab" id="nmPreco">
-                            <a data-toggle="collapse" href="#porPreco" aria-expanded="true" aria-controls="porPreco" class="d-block">
+                            <a data-toggle="collapse" href="#porPreco" aria-expanded="true" aria-controls="porPreco"
+                                class="d-block">
                                 <i class="fa fa-chevron-down pull-right"></i> Preço
                             </a>
                         </h5>
@@ -138,7 +145,8 @@
                     </article>
                     <article class="card-group-item">
                         <h5 class="card-header" role="tab" id="nmCatg">
-                            <a class="collapsed d-block" data-toggle="collapse" href="#porCatg" aria-expanded="false" aria-controls="porCatg">
+                            <a class="collapsed d-block" data-toggle="collapse" href="#porCatg" aria-expanded="false"
+                                aria-controls="porCatg">
                                 <i class="fa fa-chevron-down pull-right"></i> Categorias
                             </a>
                         </h5>
@@ -201,7 +209,8 @@
                     </article>
                     <article class="card-group-item">
                         <h5 class="card-header" role="tab" id="nmMarca">
-                            <a class="collapsed d-block" data-toggle="collapse" href="#porMarca" aria-expanded="false" aria-controls="porMarca">
+                            <a class="collapsed d-block" data-toggle="collapse" href="#porMarca" aria-expanded="false"
+                                aria-controls="porMarca">
                                 <i class="fa fa-chevron-down pull-right"></i> Marcas
                             </a>
                         </h5>
@@ -337,17 +346,20 @@
     </div>
 
     <!--Modal_EsqueciSenha-->
-    <div id="modalSenha" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div id="modalSenha" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3>Recuperar Senha</h3>
-                    <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
+                    <button type="button" class="close font-weight-light" data-dismiss="modal"
+                        aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
                     <form>
                         <div class="form-group">
-                            <label for="inputEmail" class="text-weight-bold">Digite seu E-mail para recuperar sua senha</label>
+                            <label for="inputEmail" class="text-weight-bold">Digite seu E-mail para recuperar sua
+                                senha</label>
                             <input type="text" class="form-control" id="inputEmail">
                         </div>
                     </form>
@@ -361,12 +373,14 @@
     </div>
 
     <!-- Modal_Cadastar -->
-    <div id="modalCadastro" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div id="modalCadastro" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3>Novo Usuario</h3>
-                    <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true" id="close">×</button>
+                    <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true"
+                        id="close">×</button>
                 </div>
                 <div class="modal-body">
                     <form id="formCadastro">

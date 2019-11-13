@@ -58,3 +58,17 @@ $('form').submit(function (e) {
         password: "value"
      */
 });
+
+$("#submit").click(function () {
+    debugger
+    email = $("#email").val();
+    pass = $("#password").val();
+    /*
+    * Perform some validation here.
+    */
+    $.post("/login", { email: email, pass: pass }, function (data) {
+        if (data === 'done') {
+            window.location.href = "/admin";
+        }
+    });
+});
