@@ -2,11 +2,13 @@ const express = require('express');
 const session = require('express-session');
 const app = express();
 const bodyParser = require('body-parser');
-// const porta = 3000; //porta padrão
+const path = require('path');
 const sql = require('mssql');
 const conexaoStr = "Server=regulus;Database=BD17405;User Id=BD17405;Password=13175667;";
+const rota = express.Router();
 
-//conexao com BD
+var sess;
+
 sql.connect(conexaoStr)
 	.then(conexao => global.conexao = conexao)
 	.catch(erro => console.log(erro));
@@ -18,31 +20,28 @@ app.use(session({
 	saveUninitialized: true,
 }));
 
-// configurando o body parser para pegar POSTS mais tarde   
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-//acrescentando informacoes de cabecalho para suportar o CORS
 app.use(function (req, res, next) {
 	res.header("Access-Control-Allow-Origin", "*");
 	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 	res.header("Access-Control-Allow-Methods", "GET, POST, HEAD, OPTIONS, PATCH, DELETE");
 	next();
 });
-//definindo as rotas  
-const rota = express.Router();
-var sess;
+app.use('/', rota);
+
 rota.get('/', (requisicao, resposta) => {
 	sess = requisicao.session;
 	sess.email;
-	sess.username;
-	resposta.json({ mensagem: 'Funcionando!' });
+	// resposta.sendFile(path.join(__dirname + '/Loja_Carro_Index.html'));
+	// resposta.sendFile('Loja_Carro.html');
 });
 
-app.use('/', rota);
-
-//inicia servidor
-// app.listen(porta);
-console.log('API Funcionando!');
+function SetSession(id, email, pass) {
+	if (typeof (Storage) !== "undefined") {
+		sessionStorage.setItem(id, email);
+	}
+}
 
 function execSQL(sql, resposta) {
 	global.conexao.request()
@@ -52,6 +51,7 @@ function execSQL(sql, resposta) {
 }
 
 app.post('/login', (req, res) => {
+	console.log(sess)
 	sess = req.session;
 	sess.email = req.body.email;
 	res.end('done');
@@ -81,7 +81,6 @@ app.listen(process.env.PORT || 3000, () => {
 	console.log(`Aplicação iniciada na porta ${process.env.PORT || 3000}`);
 });
 
-//o simbolo ? indica que id na rota abaixo é opcional
 rota.get('/veiculos/:id?', (requisicao, resposta) => {
 	let filtro = '';
 	if (requisicao.params.id)

@@ -50,6 +50,7 @@ cadastrar = function(form){
 })(jQuery);
 
 $('form').submit(function (e) {
+    debugger
     e.preventDefault();
     var data = $(this).serializeFormJSON();
     console.log(data);
@@ -127,3 +128,17 @@ addicionarItem = function(id, produto){
     var $span = $('#mySpanId');
     $span.text(Number($span.text()) + 1);
   };
+$("#submit").click(function () {
+    debugger
+    email = $("#email").val();
+    pass = $("#password").val();
+    /*
+    * Perform some validation here.
+    */
+    $.post("http://localhost:3000/login", { email: email, pass: pass }, function (data) {
+        debugger
+        if (data === 'done') {
+            window.location.href = "http://localhost:3000/admin";
+        }
+    });
+});
