@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
     <link rel="stylesheet" href="node_modules/bootstrap/compiler/style.css">
     <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="carrinho.css">
 
     <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0"
         crossorigin="anonymous"></script>
@@ -50,91 +51,87 @@
                     </li>
                 </ul>                           
                  
-                <ul class="navbar-nav ml-auto">
-                   
+                <ul class="navbar-nav ml-auto">                   
                                     <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="shoppingCartMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="carrinho" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">
                                                 <i class="fas fa-shopping-cart"></i>
-                                                <span class="badge badge-light">3</span>
+                                                <span class="badge badge-light" onload="incrementaBadge()"></span>
                                         </button>
                                         <div class="dropdown-menu dropdown-menu-right p-3" aria-labelledby="dropdownMenuButton">
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="table-responsive">
-                                                            <table class="table table-striped">
+                                                            <table class="table table-striped" onchange="atualizaDados()">
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col"> </th>
-                                                                        <th scope="col">Product</th>
-                                                                        <th scope="col">Available</th>
-                                                                        <th scope="col" class="text-center">Quantity</th>
-                                                                        <th scope="col" class="text-right">Price</th>
+                                                                        <th scope="col">Produto</th>
+                                                                        <th scope="col">Estoque</th>
+                                                                        <th scope="col" class="text-center">Qtd</th>
+                                                                        <th scope="col" class="text-right">Preço</th>
                                                                         <th> </th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
                                                                     <tr>
-                                                                        <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
+                                                                        <td><img  class="shopcar" src="img/audi.png"/> </td>
                                                                         <td>Product Name Dada</td>
-                                                                        <td>In stock</td>
-                                                                        <td><input class="form-control" type="text" value="1" /></td>
-                                                                        <td class="text-right">124,90 €</td>
-                                                                        <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                                                                        <td>Em estoque</td>
+                                                                        <td>
+                                                                            <div class="quantity">
+                                                                                <button class="plus-btn" type="button" name="button">
+                                                                                    <i class="fas fa-minus"></i>
+                                                                                </button>
+                                                                                <input type="text" value="1">
+                                                                                <button class="minus-btn" type="button" name="button">
+                                                                                    <i class="fas fa-plus"></i>
+                                                                                </button>
+                                                                              </div>
+                                                                        </td>
+                                                                        <td class="text-right" id="valor">R$ 1000.00</td>
+                                                                        <td class="text-right"><button class="btn btn-sm btn-danger" onclick="removeItem()"><i class="fa fa-trash"></i> </button> </td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
+                                                                        <td><img class="shopcar" src="img/Ferrari.jpg"/> </td>
                                                                         <td>Product Name Toto</td>
-                                                                        <td>In stock</td>
-                                                                        <td><input class="form-control" type="text" value="1" /></td>
-                                                                        <td class="text-right">33,90 €</td>
-                                                                        <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                                                                        <td>Product Name Titi</td>
-                                                                        <td>In stock</td>
-                                                                        <td><input class="form-control" type="text" value="1" /></td>
-                                                                        <td class="text-right">70,00 €</td>
-                                                                        <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td></td>
-                                                                        <td></td>
-                                                                        <td></td>
-                                                                        <td></td>
-                                                                        <td>Sub-Total</td>
-                                                                        <td class="text-right">255,90 €</td>
-                                                                    </tr>
+                                                                        <td>Em estoque</td>
+                                                                        <td>
+                                                                                <div class="quantity">
+                                                                                    <button class="plus-btn" type="button" name="button">
+                                                                                        <i class="fas fa-minus"></i>
+                                                                                    </button>
+                                                                                    <input type="text" value="1">
+                                                                                    <button class="minus-btn" type="button" name="button">
+                                                                                        <i class="fas fa-plus"></i>
+                                                                                    </button>
+                                                                                  </div>
+                                                                            </td>
+                                                                        <td class="text-right" id="valor">R$ 1000.00</td>
+                                                                        <td class="text-right"><button class="btn btn-sm btn-danger" onclick="removeItem()"><i class="fa fa-trash"></i></button> </td>
+                                                                    </tr>                                                  
+                                                                                                           
                                                                     <tr>
                                                                         <td></td>
                                                                         <td></td>
                                                                         <td></td>
-                                                                        <td></td>
-                                                                        <td>Shipping</td>
-                                                                        <td class="text-right">6,90 €</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td></td>
-                                                                        <td></td>
-                                                                        <td></td>
-                                                                        <td></td>
+                                                                        <td></td> 
                                                                         <td><strong>Total</strong></td>
-                                                                        <td class="text-right"><strong>346,90 €</strong></td>
+                                                                        <td class="valor-total"><strong>R$</strong></td>
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
                                                         </div>
                                                     </div>
-                                                    <div class="col mb-2">
+                                                    <div class="col mb-3">
                                                         <div class="row">
                                                             <div class="col-sm-12  col-md-6">
                                                                 <a href="Loja_Carro_Index.html">
-                                                                    <button class="btn btn-block btn-light">Continue Shopping</button>
+                                                                    <button class="btn btn-lg btn-block btn-secondary">Continuar Compra</button>
                                                                 </a>
                                                             </div>
-                                                            <div class="col-sm-12 col-md-6 text-right">
-                                                                <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+                                                            <div class="col-sm-12 col-md-6">
+                                                                <button class="btn btn-lg btn-block btn-primary">Checkout</button>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -13,6 +13,8 @@ function listarVeiculosImgs(id, imagem) {
     $(".carSlide" + id).attr({src: "img/" + imagem})
 }
 
+carrinhoImages = function(){}
+
 cadastrar = function(form){
     $.post( "http://localhost:3000/usuarios/", form.serialize() ).done(function(data){
         if (!data.erro) {
@@ -58,3 +60,70 @@ $('form').submit(function (e) {
         password: "value"
      */
 });
+
+/* $('.minus-btn').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var $input = $this.closest('div').find('input');
+    var value = parseInt($input.val());
+ 
+    if (value 1) {
+        value = value - 1;
+    } else {
+        value = 0;
+    }
+ 
+  $input.val(value);
+ 
+});
+ 
+$('.plus-btn').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var $input = $this.closest('div').find('input');
+    var value = parseInt($input.val());
+ 
+    if (value &amp;lt; 100) {
+        value = value + 1;
+    } else {
+        value =100;
+    }
+ 
+    $input.val(value);
+});
+ */
+addicionarItem = function(id, produto){
+    var element = document.getElementById(elementId)
+    for (var i = 0; i < produtos.length; i++) {
+        var item = $(produtos[i]);
+}
+};
+
+ atualizaDados = function(){
+    var carrinhos = $(".carrinho");
+    carrinhos.each(function(){
+      var carrinho = $(this);
+      var itens = carrinho.find(".item-total:visible");
+      var total = 0;
+      for (var i = 0; i < itens.length; i++) {
+        var item = $(itens[i]);
+        var valor = parseFloat(item.text());
+        total = total + valor;
+      }
+      console.log("Valor total: " + total);
+      carrinho.find(".valor-total").text(total);
+      carrinho.find(".quantidade-itens").text(itens.length);
+    });
+  };
+  
+   removeItem = function(event){
+    event.preventDefault();
+    var self = $(this);
+    self.closest("tr").hide();
+    atualizaDados();
+  };
+
+ incrementaBadge = function(){
+    var $span = $('#mySpanId');
+    $span.text(Number($span.text()) + 1);
+  };
