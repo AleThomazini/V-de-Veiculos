@@ -11,6 +11,5 @@ btnCadastrar.onclick = function() {
     cadastrar($("#formCadastro"));
 };
 
-listarClientes("tbody");
 
 

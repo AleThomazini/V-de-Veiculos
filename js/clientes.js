@@ -48,6 +48,7 @@ cadastrar = function(form){
 })(jQuery);
 
 $('form').submit(function (e) {
+    debugger
     e.preventDefault();
     var data = $(this).serializeFormJSON();
     console.log(data);
@@ -66,9 +67,10 @@ $("#submit").click(function () {
     /*
     * Perform some validation here.
     */
-    $.post("/login", { email: email, pass: pass }, function (data) {
+    $.post("http://localhost:3000/login", { email: email, pass: pass }, function (data) {
+        debugger
         if (data === 'done') {
-            window.location.href = "/admin";
+            window.location.href = "http://localhost:3000/admin";
         }
     });
 });
