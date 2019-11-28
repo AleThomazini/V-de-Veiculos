@@ -16,20 +16,10 @@ function listarVeiculosImgs(id, imagem) {
 carrinhoImages = function(){}
 
 cadastrar = function(form){
-    $.post( "http://localhost:3000/usuarios/", form.serialize() ).done(function(data){
-        if (!data.erro) {
-            form.each(function(data){
-                    //limpar formulário
-                    this.reset();
-            });
-
-            $("#modalInc").closeModal();
-        }
-        alert(data.mensagem);
-    });
+    $.post( "http://localhost:3000/cadastro", form.serialize() )
+        .done(function(data){ }
+    );
 };
-
-
 
 (function ($) {
     $.fn.serializeFormJSON = function () {
@@ -54,12 +44,6 @@ $('form').submit(function (e) {
     e.preventDefault();
     var data = $(this).serializeFormJSON();
     console.log(data);
-
-    /* Object
-        email: "value"
-        name: "value"
-        password: "value"
-     */
 });
 
 /* $('.minus-btn').on('click', function(e) {

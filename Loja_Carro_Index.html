@@ -473,23 +473,23 @@
                         id="close">×</button>
                 </div>
                 <div class="modal-body">
-                    <form id="formCadastro">
+                    <form id="formCadastro" method="POST" action="/cadastro">
                         <div class="form-row">
                             <div class="form-group col-sm-12">
                                 <label for="inputName" class="text-weight-bold">Nome: </label>
-                                <input type="text" class="form-control" id="nome">
+                                <input type="text" class="form-control" name="nome" id="nome">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-sm-12">
                                 <label for="inputEmail" class="text-weight-bold">E-mail: </label>
-                                <input type="text" class="form-control" id="emailCadastro">
+                                <input type="text" class="form-control" name="email" id="emailCadastro">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-sm-12">
                                 <label for="inputSenha" class="text-weight-bold">Senha: </label>
-                                <input type="password" class="form-control" id="senha">
+                                <input type="password" class="form-control" name="senha" id="senha">
                             </div>
                         </div>
                         <div class="form-row">
