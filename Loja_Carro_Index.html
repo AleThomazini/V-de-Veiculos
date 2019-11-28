@@ -83,15 +83,11 @@
                                                                         <td>Product Name Dada</td>
                                                                         <td>Em estoque</td>
                                                                         <td>
-                                                                            <div class="quantity">
-                                                                                <button class="plus-btn" type="button" name="button">
-                                                                                    <i class="fas fa-minus"></i>
-                                                                                </button>
-                                                                                <input type="text" value="1">
-                                                                                <button class="minus-btn" type="button" name="button">
-                                                                                    <i class="fas fa-plus"></i>
-                                                                                </button>
-                                                                              </div>
+                                                                            <div class="quantity d-flex">
+                                                                                <input type="button" value="-" class="button-minus" data-field="quantity">
+                                                                                <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
+                                                                                <input type="button" value="+" class="button-plus" data-field="quantity">
+                                                                            </div>
                                                                         </td>
                                                                         <td class="text-right" id="valor">R$ 1000.00</td>
                                                                         <td class="text-right"><button class="btn btn-sm btn-danger" onclick="removeItem()"><i class="fa fa-trash"></i> </button> </td>
@@ -101,15 +97,11 @@
                                                                         <td>Product Name Toto</td>
                                                                         <td>Em estoque</td>
                                                                         <td>
-                                                                                <div class="quantity">
-                                                                                    <button class="plus-btn" type="button" name="button">
-                                                                                        <i class="fas fa-minus"></i>
-                                                                                    </button>
-                                                                                    <input type="text" value="1">
-                                                                                    <button class="minus-btn" type="button" name="button">
-                                                                                        <i class="fas fa-plus"></i>
-                                                                                    </button>
-                                                                                  </div>
+                                                                                <div class="quantity d-flex">
+                                                                                    <input type="button" value="-" class="button-minus" data-field="quantity">
+                                                                                    <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
+                                                                                    <input type="button" value="+" class="button-plus" data-field="quantity">
+                                                                                </div>
                                                                             </td>
                                                                         <td class="text-right" id="valor">R$ 1000.00</td>
                                                                         <td class="text-right"><button class="btn btn-sm btn-danger" onclick="removeItem()"><i class="fa fa-trash"></i></button> </td>
