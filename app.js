@@ -33,8 +33,6 @@ app.use('/', rota);
 rota.get('/', (requisicao, resposta) => {
 	sess = requisicao.session;
 	sess.email;
-	// resposta.sendFile(path.join(__dirname + '/Loja_Carro_Index.html'));
-	// resposta.sendFile('Loja_Carro.html');
 });
 
 function SetSession(id, email, pass) {
@@ -46,12 +44,13 @@ function SetSession(id, email, pass) {
 function execSQL(sql, resposta) {
 	global.conexao.request()
 		.query(sql)
-		.then(resultado => resposta.json(resultado.recordset))
+		.then(resultado => {
+			resposta.json(resultado.recordset)
+		})
 		.catch(erro => resposta.json(erro));
 }
 
 app.post('/login', (req, res) => {
-	console.log(sess)
 	sess = req.session;
 	sess.email = req.body.email;
 	res.end('done');
@@ -100,4 +99,9 @@ rota.get('/usuario/:id?', (requisao, resposta) => {
 	if (requisao.params.id)
 		filtro = ' WHERE idUsuario=' + parseInt(requisao.params.id);
 	execSQL('SELECT + from Usuario' + filtro, resposta);
+})
+
+rota.post('/cadastro', (requisao, resposta) => {
+	var query  = `INSERT INTO Usuario (Nome, Senha, Email) VALUES ('${requisao.body.nome}', '${requisao.body.senha}' , '${requisao.body.email}');`;
+	execSQL(query, resposta);
 })
