@@ -63,6 +63,15 @@ $('form').submit(function (e) {
 });
 
 
+totalValor = function(){
+    var items = $('#cart div.cart-item');
+    var total = 0;
+    items.each(function (){
+      // here do some magic to create a variable named value with the qty number
+      total += value;
+    });
+}
+
  
 addicionarItem = function(id, produto){
     var element = document.getElementById(elementId)
@@ -99,6 +108,7 @@ addicionarItem = function(id, produto){
     var $span = $('#mySpanId');
     $span.text(Number($span.text()) + 1);
   };
+
 $("#submit").click(function () {
     debugger
     email = $("#email").val();
@@ -113,6 +123,12 @@ $("#submit").click(function () {
         }
     });
 });
+
+$('#msg').click(function(){
+    alert("Compra efetuada com sucesso!");
+});
+
+
 
 function incrementValue(e) {
     e.preventDefault();

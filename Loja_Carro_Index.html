@@ -83,29 +83,29 @@
                                                                         <td>Product Name Dada</td>
                                                                         <td>Em estoque</td>
                                                                         <td>
-                                                                            <div class="quantity d-flex">
+                                                                            <div class="input-group">
                                                                                 <input type="button" value="-" class="button-minus" data-field="quantity">
                                                                                 <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
                                                                                 <input type="button" value="+" class="button-plus" data-field="quantity">
                                                                             </div>
                                                                         </td>
                                                                         <td class="text-right" id="valor">R$ 1000.00</td>
-                                                                        <td class="text-right"><button class="btn btn-sm btn-danger" onclick="removeItem()"><i class="fa fa-trash"></i> </button> </td>
+                                                                        <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td><img class="shopcar" src="img/Ferrari.jpg"/> </td>
                                                                         <td>Product Name Toto</td>
                                                                         <td>Em estoque</td>
                                                                         <td>
-                                                                                <div class="quantity d-flex">
-                                                                                    <input type="button" value="-" class="button-minus" data-field="quantity">
-                                                                                    <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
-                                                                                    <input type="button" value="+" class="button-plus" data-field="quantity">
-                                                                                </div>
+                                                                            <div class="input-group">
+                                                                                <input type="button" value="-" class="button-minus" data-field="quantity">
+                                                                                <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
+                                                                                <input type="button" value="+" class="button-plus" data-field="quantity">
+                                                                              </div>
                                                                             </td>
                                                                         <td class="text-right" id="valor">R$ 1000.00</td>
-                                                                        <td class="text-right"><button class="btn btn-sm btn-danger" onclick="removeItem()"><i class="fa fa-trash"></i></button> </td>
-                                                                    </tr>                                                  
+                                                                        <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button> </td>
+                                                                    </tr>                                           
                                                                                                            
                                                                     <tr>
                                                                         <td></td>
@@ -117,6 +117,7 @@
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
+                                                           
                                                         </div>
                                                     </div>
                                                     <div class="col mb-3">
@@ -125,15 +126,39 @@
                                                                 <a href="Loja_Carro_Index.html">
                                                                     <button class="btn btn-lg btn-block btn-secondary">Continuar Compra</button>
                                                                 </a>
-                                                            </div>
+                                                            </div>                                                           
                                                             <div class="col-sm-12 col-md-6">
-                                                                <button class="btn btn-lg btn-block btn-primary">Checkout</button>
+                                                                <button id="msg" class="btn btn-lg btn-block btn-primary">Checkout</button>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div>                                                    
                                                 </div>
-                                            </div>
+                                                <div class="col mb-3">
+                                                        <h3>Payment</h3>
+                                                        <label for="fname">Accepted Cards</label>
+                                                        <div class="icon-container">
+                                                          <i class="fa fa-cc-visa" style="color:navy;"></i>                                                             
+                                                          <i class="fa fa-cc-mastercard" style="color:red;"></i>                                                              
+                                                        </div>
+                                                        <label for="cname">Name on Card</label>
+                                                        <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                                                        <label for="ccnum">Credit card number</label>
+                                                        <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                                                        <label for="expmonth">Exp Month</label>
+                                                        <input type="text" id="expmonth" name="expmonth" placeholder="September">
                                             
+                                                        <div class="row">
+                                                          <div class="col-50">
+                                                            <label for="expyear">Exp Year</label>
+                                                            <input type="text" id="expyear" name="expyear" placeholder="2018">
+                                                          </div>
+                                                          <div class="col-50">
+                                                            <label for="cvv">CVV</label>
+                                                            <input type="text" id="cvv" name="cvv" placeholder="352">
+                                                          </div>
+                                                        </div>  
+                                                </div>                                                
+                                            </div>                                      
                                     </div>
 
                     <div class="dropdown">
