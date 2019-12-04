@@ -1,13 +1,23 @@
 let itensLista = [];
+let carro = {};
 $(document).ready(function(){
     itensLista = [];
-    $.get("http://localhost:3000/imagens/", function (imgs) {
-        let url;
-        for (let index = 0; index < imgs.length; index++) {
-            url = imgs[index].urlImagem
-            listarVeiculosImgs(index, url);
-        }
+
+    $.get("http://localhost:3000/veiculos", function (veiculo) {
+      carro = veiculo;
+      console.log(carro)
+      for (let index = 0; index < carro.length; index++) {
+        adicionarVeiculo(carro[index].id_veiculo, carro[index].modelo, carro[index].detalhes, carro[index].preco)
+      }
     });
+
+    $.get("http://localhost:3000/imagens/", function (imgs) {
+      let url;
+      for (let index = 0; index < imgs.length; index++) {
+          url = imgs[index].urlImagem
+          listarVeiculosImgs(index, url);
+      }
+  });
 
     $(document).on('click', 'input[name="increment"]', function(e) {
       incrementValue(e);
@@ -22,7 +32,10 @@ $(document).ready(function(){
       removerItemCarrinho(index);
     });
 
-    adicionarItemCarrinho(1, 'audi.png', 'Nome Produto', 'Status Produto', 10, 1000000)
+    $(document).on('click', 'a[name="comprar"]', function(e) {
+      let index = $(e.currentTarget).data('value');
+      adicionarItemCarrinho(index)
+    });
 })
 
 function listarVeiculosImgs(id, imagem) {
@@ -108,10 +121,7 @@ addicionarItem = function(id, produto){
 $("#submit").click(function () {
     debugger
     email = $("#email").val();
-    pass = $("#password").val();
-    /*
-    * Perform some validation here.
-    */
+    pass = $("#password").val();    
     $.post("http://localhost:3000/login", { email: email, pass: pass }, function (data) {
         debugger
         if (data === 'done') {
@@ -164,7 +174,24 @@ function incrementValue(e) {
     atualizarValores();
   } 
 
-  adicionarItemCarrinho = (index,imagem, nomeProduto, status, quantidade, valor) => {
+  adicionarItemCarrinho = (index) => {
+    debugger
+    let imagem, nomeProduto, valor
+    let quantidade = 1;
+    let status = "Em Estoque";
+    valor = 10000
+
+    //Funções Get que não funcionam,
+
+    $.get("http://localhost:3000/veiculos/", { id: index}, function (carro) {
+      nomeProduto = carro.modelo,
+      valor = carro.preco
+    });
+    $.get("http://localhost:3000/imagens/", { id: index}, function (imgs) {
+        imagem = imgs[0].urlImagem
+    })
+
+
     itensLista.push({ 
       index,
       quantidade,
@@ -200,4 +227,13 @@ function incrementValue(e) {
     let valor = valores.reduce((previous, currentValue) => previous + currentValue);
     let html = '<tr><td colspan="5"><strong>Total</strong></td><td class="valor-total"><strong>R$</strong>'+ valor +'</td></tr>';
     $('#rodapeTabela').html(html);
+  }
+
+
+  adicionarVeiculo = (index, modeloCarro, descricaoCarro, valorCarro) => {
+    const conteudoLoja = $('#conteudoLoja');
+    let html = (conteudoLoja.html() ? conteudoLoja.html() : "");
+    let componente = `<div class=""><article class="card card-product"><div class="card-body"><div class="row"><aside class="col-sm-6"><div class="img-wrap img-produto"><img src="" id="img-Veiculo1" class="img-produto"></div></aside><article class="col-sm-6"><h4 class="title">${modeloCarro}</h4><p>${descricaoCarro}</p><div class="action-wrap"><div class="price-wrap h4"><span class="price"> ${valorCarro} </span></div><p><a href="#" name="comprar" data-value="${index}" class="btn btn-primary"> Comprar </a><a href="detalhe_veiculo.html" class="btn btn-secondary"> Detalhes </a></p></div></article></div></div></article></div>`
+    html += componente;
+    conteudoLoja.html(html);
   }

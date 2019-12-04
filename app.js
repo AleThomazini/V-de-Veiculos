@@ -83,7 +83,7 @@ app.listen(process.env.PORT || 3000, () => {
 rota.get('/veiculos/:id?', (requisicao, resposta) => {
 	let filtro = '';
 	if (requisicao.params.id)
-		filtro = ' WHERE ID=' + parseInt(requisicao.params.id);
+		filtro = ' WHERE id_veiculo=' + parseInt(requisicao.params.id);
 	execSQL('SELECT * from Veiculo' + filtro, resposta);
 })
 
